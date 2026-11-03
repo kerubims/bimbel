@@ -1,0 +1,12 @@
+services:
+  bimbel-web:
+    image: nginx:alpine
+    container_name: bimbel-web
+    restart: unless-stopped
+    ports:
+      - "9031:80"
+    volumes:
+      - ./code.html:/usr/share/nginx/html/index.html:ro
+      - ./screen.png:/usr/share/nginx/html/screen.png:ro
+    environment:
+      - TZ=Asia/Jakarta
