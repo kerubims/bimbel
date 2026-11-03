@@ -1,31 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html class="dark scroll-smooth" lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>
-      AKADEMI TARUNA INDONESIA | Persiapan Seleksi Taruna AKMIL, AKPOL &amp;
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+      SATRIA TARUNA | Persiapan Seleksi Taruna AKMIL, AKPOL &amp;
       Kedinasan
     </title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <!-- Material Symbols Outlined -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <!-- Tailwind CSS with Config Plugin -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Config Plugin -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -226,7 +218,7 @@
         },
       };
     </script>
-    <style>
+<style>
       .todo-box {
         border: 1.5px dashed #c9a227;
         background-color: #1d1908;
@@ -251,257 +243,205 @@
       details summary::-webkit-details-marker {
         display: none;
       }
+    
+      /* ================= KSM.WEB.ID BTN-SWEEP ANIMATION ================= */
+      .btn-sweep {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        transition: transform 0.2s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+      }
+      .btn-sweep::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: var(--sweep, #ecc246);
+        transform: translateX(-101%);
+        transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+      .btn-sweep::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 45%;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+        transform: translateX(-160%) skewX(-14deg);
+        transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s;
+      }
+      .btn-sweep:hover::before {
+        transform: translateX(0);
+      }
+      .btn-sweep:hover::after {
+        transform: translateX(320%) skewX(-14deg);
+      }
+      .btn-sweep:active {
+        transform: scale(0.98);
+      }
+      .btn-sweep-gold {
+        background-color: #ecc246 !important;
+        color: #050b18 !important;
+        --sweep: #f5d365;
+        box-shadow: 0 4px 18px rgba(236, 194, 70, 0.25);
+      }
+      .btn-sweep-gold:hover {
+        box-shadow: 0 8px 28px rgba(236, 194, 70, 0.45);
+        transform: translateY(-2px);
+      }
+      .btn-sweep-outline {
+        background-color: transparent !important;
+        border: 1px solid rgba(30, 58, 109, 0.9) !important;
+        color: #f1f4fe !important;
+        --sweep: rgba(236, 194, 70, 0.14);
+      }
+      .btn-sweep-outline:hover {
+        border-color: #ecc246 !important;
+        color: #ecc246 !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(14, 34, 70, 0.4);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .btn-sweep::before, .btn-sweep::after {
+          transition: none !important;
+        }
+      }
+
     </style>
-  </head>
-  <body
-    class="bg-navy-deep text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-secondary selection:text-navy-deep"
-  >
-    <!-- ================= SECTION 1: TOP APP BAR (Shared Component) ================= -->
-    <header
-      class="bg-primary-container/90 dark:bg-primary-container/90 backdrop-blur-md text-secondary dark:text-secondary docked full-width top sticky z-50 border-b border-navy-border dark:border-navy-border shadow-md"
-    >
-      <div
-        class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between w-full"
-      >
-        <!-- Brand Logo Anchor -->
-        <a
-          class="flex items-center gap-3 active:scale-95 transition-transform duration-150"
-          href="#"
-        >
-          <div
-            class="w-10 h-10 rounded bg-navy-surface border border-secondary flex items-center justify-center text-secondary"
-          >
-            <span
-              class="material-symbols-outlined text-secondary"
-              style="font-variation-settings: &quot;FILL&quot; 1"
-              >military_tech</span
-            >
-          </div>
-          <div class="flex flex-col">
-            <span
-              class="font-headline-md text-headline-md tracking-wider text-text-primary dark:text-text-primary font-bold leading-none"
-              >AKADEMI TARUNA INDONESIA</span
-            >
-            <span
-              class="font-label-caps text-label-caps uppercase text-secondary tracking-widest text-xs pt-1"
-              >BIMBEL SELEKSI TARUNA &amp; KEDINASAN</span
-            >
-          </div>
-        </a>
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center space-x-8">
-          <a
-            class="text-secondary dark:text-secondary font-semibold border-b-2 border-secondary pb-1 font-label-caps text-label-caps uppercase hover:text-gold-light transition-colors duration-200"
-            href="#jalur"
-            >Jalur Seleksi</a
-          >
-          <a
-            class="text-text-secondary dark:text-text-secondary font-medium tracking-wide font-label-caps text-label-caps uppercase hover:text-gold-light transition-colors duration-200"
-            href="#program"
-            >Program Diklat</a
-          >
-          <a
-            class="text-text-secondary dark:text-text-secondary font-medium tracking-wide font-label-caps text-label-caps uppercase hover:text-gold-light transition-colors duration-200"
-            href="#keunggulan"
-            >Keunggulan</a
-          >
-          <a
-            class="text-text-secondary dark:text-text-secondary font-medium tracking-wide font-label-caps text-label-caps uppercase hover:text-gold-light transition-colors duration-200"
-            href="#alumni"
-            >Alumni</a
-          >
-          <a
-            class="text-text-secondary dark:text-text-secondary font-medium tracking-wide font-label-caps text-label-caps uppercase hover:text-gold-light transition-colors duration-200"
-            href="#faq"
-            >FAQ</a
-          >
-        </nav>
-        <!-- Primary Action CTA -->
-        <div class="flex items-center gap-4">
-          <a
-            class="h-12 px-6 rounded bg-secondary hover:bg-gold-hover text-navy-deep font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider transition-all duration-200 active:scale-95 shadow-md"
-            href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20ingin%20Konsultasi%20Gratis%20persiapan%20seleksi%20taruna."
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+</head>
+<body class="bg-navy-deep text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-secondary selection:text-navy-deep">
+<!-- ================= SECTION 1: TOP APP BAR (Shared Component) ================= -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-primary-container/95 backdrop-blur-md border-b border-navy-border/80 shadow-lg">
+<div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between w-full">
+<!-- Brand Logo Anchor -->
+<a class="flex items-center gap-3 active:scale-95 transition-transform duration-150" href="#">
+<div class="w-10 h-10 rounded bg-navy-surface border border-secondary flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-secondary" style='font-variation-settings: "FILL" 1'>military_tech</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md tracking-wider text-text-primary dark:text-text-primary font-bold leading-none">SATRIA TARUNA</span>
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest text-xs pt-1">BIMBEL SELEKSI TARUNA &amp; KEDINASAN</span>
+</div>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-secondary dark:text-secondary font-semibold border-b-2 border-secondary pb-1 font-label-caps text-label-caps uppercase hover:text-gold-light transition-colors duration-200" href="#jalur">Jalur Seleksi</a>
+<a class="text-text-secondary dark:text-text-secondary font-medium tracking-wide font-label-caps text-label-caps uppercase hover:text-gold-light transition-colors duration-200" href="#program">Program Diklat</a>
+<a class="text-text-secondary dark:text-text-secondary font-medium tracking-wide font-label-caps text-label-caps uppercase hover:text-gold-light transition-colors duration-200" href="#keunggulan">Keunggulan</a>
+<a class="text-text-secondary dark:text-text-secondary font-medium tracking-wide font-label-caps text-label-caps uppercase hover:text-gold-light transition-colors duration-200" href="#alumni">Alumni</a>
+<a class="text-text-secondary dark:text-text-secondary font-medium tracking-wide font-label-caps text-label-caps uppercase hover:text-gold-light transition-colors duration-200" href="#faq">FAQ</a>
+</nav>
+<!-- Primary Action CTA -->
+<div class="flex items-center gap-4">
+<a class="btn-sweep btn-sweep-gold h-12 px-6 rounded font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20ingin%20Konsultasi%20Gratis%20persiapan%20seleksi%20taruna." rel="noopener noreferrer" target="_blank">
             Konsultasi Gratis
           </a>
-        </div>
-      </div>
-    </header>
-    <main class="flex-grow">
-      <!-- ================= SECTION 2: HERO SECTION ================= -->
-      <section
-        class="relative min-h-[640px] lg:h-[720px] flex items-center overflow-hidden border-b border-navy-border"
-      >
-        <!-- Background Image with Double Gradients -->
-        <div class="absolute inset-0 z-0">
-          <!-- GANTI FOTO INI: Foto barisan taruna/calon taruna berlatih fisik di lintasan atletik stadion militer saat fajar -->
-          <img
-            alt="Latihan Fisik Taruna Akademi"
-            class="w-full h-full object-cover object-center brightness-90"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCAABsmWVHtIQrQRaXjVF6IPInXrYUU7kuf4mpoyC0fg4ZoUeM9KKVV0v8_XtRvqmtTLY3SfuolfA2_tfVIB7bIOnbRMAjIA46LKfvj8ydO8Gg5Uw1XQQH8fps5bod16LO0I2VhaU0xMXFbiAQjhqkylXZy7jqoDB5tkLSEWVHYfNj9JOZf8M2o4TDr3eeC3HMkbgR7KpAtGAMx5J1Q5koFj-ORB7qqj6N_aWnFqU"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-transparent"
-          ></div>
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/40"
-          ></div>
-        </div>
-        <div class="relative z-10 max-w-6xl mx-auto px-6 py-16 lg:py-24 w-full">
-          <div class="max-w-2xl space-y-6">
-            <h1
-              class="font-headline-xl text-headline-xl lg:font-display lg:text-display text-text-primary font-bold uppercase tracking-tight leading-none"
-            >
+</div>
+</div>
+</header>
+<main class="flex-grow pt-20">
+<!-- ================= SECTION 2: HERO SECTION ================= -->
+<section class="relative min-h-[640px] lg:h-[720px] flex items-center overflow-hidden border-b border-navy-border">
+<!-- Background Image with Double Gradients -->
+<div class="absolute inset-0 z-0">
+<!-- GANTI FOTO INI: Foto barisan taruna/calon taruna berlatih fisik di lintasan atletik stadion militer saat fajar -->
+<img alt="Latihan Fisik Taruna Akademi" class="w-full h-full object-cover object-center brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCAABsmWVHtIQrQRaXjVF6IPInXrYUU7kuf4mpoyC0fg4ZoUeM9KKVV0v8_XtRvqmtTLY3SfuolfA2_tfVIB7bIOnbRMAjIA46LKfvj8ydO8Gg5Uw1XQQH8fps5bod16LO0I2VhaU0xMXFbiAQjhqkylXZy7jqoDB5tkLSEWVHYfNj9JOZf8M2o4TDr3eeC3HMkbgR7KpAtGAMx5J1Q5koFj-ORB7qqj6N_aWnFqU"/>
+<div class="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/40"></div>
+</div>
+<div class="relative z-10 max-w-6xl mx-auto px-6 py-16 lg:py-24 w-full">
+<div class="max-w-2xl space-y-6">
+<h1 class="font-headline-xl text-headline-xl lg:font-display lg:text-display text-text-primary font-bold uppercase tracking-tight leading-none">
               Lolos Seleksi Taruna
               <span class="text-secondary">AKMIL, AKPOL</span> &amp; Kedinasan
             </h1>
-            <p
-              class="font-body-lg text-body-lg text-text-secondary leading-relaxed"
-            >
+<p class="font-body-lg text-body-lg text-text-secondary leading-relaxed">
               Bimbingan fisik, materi CAT BKN, psikotes dinas, dan tes kesehatan. Siap hadapi seleksi resmi sampai tuntas.
             </p>
-            <!-- Action Buttons -->
-            <div
-              class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
-            >
-              <a
-                class="h-12 px-8 rounded bg-secondary hover:bg-gold-hover text-navy-deep font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider transition-all duration-200 active:scale-95 shadow-lg shadow-secondary/10"
-                href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20ingin%20Konsultasi%20Awal%20Gratis%20terkait%20jadwal%20dan%20seleksi."
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span
-                  class="material-symbols-outlined mr-2 text-xl"
-                  style="font-variation-settings: &quot;FILL&quot; 1"
-                  >chat</span
-                >
+<!-- Action Buttons -->
+<div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+<a class="btn-sweep btn-sweep-gold h-12 px-8 rounded font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20ingin%20Konsultasi%20Awal%20Gratis%20terkait%20jadwal%20dan%20seleksi." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-2 text-xl" style='font-variation-settings: "FILL" 1'>chat</span>
                 Konsultasi via WhatsApp
               </a>
-              <a
-                class="h-12 px-8 rounded border border-navy-border hover:border-secondary bg-transparent hover:bg-navy-surface text-text-primary font-label-caps text-label-caps uppercase flex items-center justify-center tracking-wider transition-all duration-200 active:scale-95"
-                href="#program"
-              >
+<a class="btn-sweep btn-sweep-outline h-12 px-8 rounded font-label-caps text-label-caps uppercase flex items-center justify-center tracking-wider" href="#program">
                 Lihat Pilihan Program
               </a>
-            </div>
-            <!-- Microcopy Institutional Note -->
-            <div
-              class="flex items-center gap-3 pt-2 text-text-muted font-body-sm text-body-sm"
-            >
-              <span
-                class="material-symbols-outlined text-secondary text-base"
-                style="font-variation-settings: &quot;FILL&quot; 1"
-                >verified_user</span
-              >
-              <span class=""
-                >Konsultasi awal gratis langsung bersama pembina.</span
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Patriotic Ribbon Divider -->
-      <div class="w-full flex h-1">
-        <div class="w-1/2 bg-red-ribbon"></div>
-        <div class="w-1/2 bg-white"></div>
-      </div>
-      <!-- ================= SECTION 3: BAR STATISTIK KEPERCAYAAN ================= -->
-      <section class="bg-primary-container border-b border-navy-border py-10">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <div
-              class="p-6 rounded bg-navy-surface border border-navy-border flex flex-col justify-between"
-            >
-              <div
-                class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-extrabold leading-none"
-              >
+</div>
+<!-- Microcopy Institutional Note -->
+<div class="flex items-center gap-3 pt-2 text-text-muted font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-base" style='font-variation-settings: "FILL" 1'>verified_user</span>
+<span class="">Konsultasi awal gratis langsung bersama pembina.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 3: BAR STATISTIK KEPERCAYAAN ================= -->
+<section class="bg-primary-container border-b border-navy-border py-10">
+<div class="max-w-6xl mx-auto px-6">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+<div class="p-6 rounded bg-navy-surface border border-navy-border flex flex-col justify-between">
+<div class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-extrabold leading-none">
                 850+
               </div>
-              <div class="pt-3">
-                <div
-                  class="font-label-caps text-label-caps uppercase text-text-primary font-bold tracking-wider"
-                >
+<div class="pt-3">
+<div class="font-label-caps text-label-caps uppercase text-text-primary font-bold tracking-wider">
                   Alumni Terbimbing
                 </div>
-                <div class="font-body-sm text-body-sm text-text-muted mt-1">
+<div class="font-body-sm text-body-sm text-text-muted mt-1">
                   Data internal 2018 - 2024
                 </div>
-              </div>
-            </div>
-            <div
-              class="p-6 rounded bg-navy-surface border border-navy-border flex flex-col justify-between"
-            >
-              <div
-                class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-extrabold leading-none"
-              >
+</div>
+</div>
+<div class="p-6 rounded bg-navy-surface border border-navy-border flex flex-col justify-between">
+<div class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-extrabold leading-none">
                 94.2%
               </div>
-              <div class="pt-3">
-                <div
-                  class="font-label-caps text-label-caps uppercase text-text-primary font-bold tracking-wider"
-                >
+<div class="pt-3">
+<div class="font-label-caps text-label-caps uppercase text-text-primary font-bold tracking-wider">
                   Tingkat Kepuasan Siswa
                 </div>
-                <div class="font-body-sm text-body-sm text-text-muted mt-1">
+<div class="font-body-sm text-body-sm text-text-muted mt-1">
                   Evaluasi siswa berkala
                 </div>
-              </div>
-            </div>
-            <div
-              class="p-6 rounded bg-navy-surface border border-navy-border flex flex-col justify-between"
-            >
-              <div
-                class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-extrabold leading-none"
-              >
+</div>
+</div>
+<div class="p-6 rounded bg-navy-surface border border-navy-border flex flex-col justify-between">
+<div class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-extrabold leading-none">
                 12+
               </div>
-              <div class="pt-3">
-                <div
-                  class="font-label-caps text-label-caps uppercase text-text-primary font-bold tracking-wider"
-                >
+<div class="pt-3">
+<div class="font-label-caps text-label-caps uppercase text-text-primary font-bold tracking-wider">
                   Tahun Pengalaman Pembina
                 </div>
-                <div class="font-body-sm text-body-sm text-text-muted mt-1">
+<div class="font-body-sm text-body-sm text-text-muted mt-1">
                   Pelatih jasmani dan psikolog
                 </div>
-              </div>
-            </div>
-            <div
-              class="p-6 rounded bg-navy-surface border border-navy-border flex flex-col justify-between"
-            >
-              <div
-                class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-extrabold leading-none"
-              >
+</div>
+</div>
+<div class="p-6 rounded bg-navy-surface border border-navy-border flex flex-col justify-between">
+<div class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-extrabold leading-none">
                 4
               </div>
-              <div class="pt-3">
-                <div
-                  class="font-label-caps text-label-caps uppercase text-text-primary font-bold tracking-wider"
-                >
+<div class="pt-3">
+<div class="font-label-caps text-label-caps uppercase text-text-primary font-bold tracking-wider">
                   Fasilitas Latihan
                 </div>
-                <div class="font-body-sm text-body-sm text-text-muted mt-1">
+<div class="font-body-sm text-body-sm text-text-muted mt-1">
                   Lintasan lari dan lab CAT
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ================= SECTION 4: JALUR YANG DIBIMBING ================= -->
-      <section
-        class="py-16 lg:py-24 max-w-6xl mx-auto px-6 w-full relative"
-        id="jalur"
-      >
-        <div
-          class="absolute inset-0 pointer-events-none -z-0 overflow-hidden"
-          aria-hidden="true"
-        >
-          <div
-            class="absolute inset-0 opacity-10"
-            style="
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 4: JALUR YANG DIBIMBING ================= -->
+<section class="py-16 lg:py-24 max-w-6xl mx-auto px-6 w-full relative" id="jalur">
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="
               background-image:
                 radial-gradient(rgba(236, 194, 70, 0.06) 1px, transparent 1px),
                 radial-gradient(rgba(184, 198, 238, 0.04) 1px, transparent 1px);
@@ -509,322 +449,126 @@
               background-position:
                 0 0,
                 16px 16px;
-            "
-          ></div>
-          <div
-            class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-secondary/5 rounded-full blur-3xl opacity-20 pointer-events-none"
-          ></div>
-        </div>
-        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <span
-            class="font-label-caps text-label-caps uppercase text-secondary tracking-widest text-xs font-bold block"
-            >REJIM PEMBINAAN SPESIFIK</span
-          >
-          <h2
-            class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight"
-          >
+            "></div>
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-secondary/5 rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+</div>
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+
+<h2 class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight">
             Pilihan Jalur Seleksi
           </h2>
-          <p class="font-body-md text-body-md text-text-secondary">
+<p class="font-body-md text-body-md text-text-secondary">
             Materi latihan disesuaikan standar tiap matra.
           </p>
-        </div>
-        <!-- 4 Columns Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Track 1: AKMIL -->
-          <div
-            class="bg-primary-container border border-navy-border rounded p-6 flex flex-col justify-between hover:border-secondary transition-colors duration-200"
-          >
-            <div class="space-y-4">
-              <div
-                class="w-12 h-12 rounded bg-navy-surface border border-navy-border flex items-center justify-center text-secondary"
-              >
-                <span
-                  class="material-symbols-outlined text-2xl"
-                  style="font-variation-settings: &quot;FILL&quot; 1"
-                  >shield</span
-                >
-              </div>
-              <div>
-                <h3
-                  class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase"
-                >
+</div>
+<!-- 4 Columns Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Track 1: AKMIL -->
+<div class="bg-primary-container border border-navy-border rounded p-6 flex flex-col justify-between hover:border-secondary transition-colors duration-200">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded bg-navy-surface border border-navy-border flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" style='font-variation-settings: "FILL" 1'>shield</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase">
                   AKMIL
                 </h3>
-                <p class="text-xs text-text-muted mt-1 font-body-sm">
+<p class="text-xs text-text-muted mt-1 font-body-sm">
                   TNI AD, AL, dan AU
                 </p>
-              </div>
-              <p class="font-body-sm text-body-sm text-text-secondary">
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
                 Fokus jasmani lari 12 menit, pull-up, sit-up, push-up, shuttle run, dan akademik.
               </p>
-              <div class="pt-2 border-t border-navy-border space-y-2">
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Samapta Standar Mabes TNI</span>
-                </div>
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Psikotes Proyektif &amp; Kecermatan</span>
-                </div>
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Screening Rikkes Awal Mandiri</span>
-                </div>
-              </div>
-            </div>
-            <div class="pt-6">
-              <a
-                class="w-full h-10 rounded border border-navy-border hover:border-secondary bg-navy-surface text-text-primary font-label-caps text-label-caps uppercase flex items-center justify-center text-xs tracking-wider transition-colors duration-150"
-                href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20ingin%20konsultasi%20jalur%20persiapan%20AKMIL%20TNI."
-                target="_blank"
-              >
+
+</div>
+<div class="pt-6">
+<a class="btn-sweep btn-sweep-outline w-full h-10 rounded font-label-caps text-label-caps uppercase flex items-center justify-center text-xs tracking-wider" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20ingin%20konsultasi%20jalur%20persiapan%20AKMIL%20TNI." target="_blank">
                 Info Jalur AKMIL
               </a>
-            </div>
-          </div>
-          <!-- Track 2: AKPOL -->
-          <div
-            class="bg-primary-container border border-navy-border rounded p-6 flex flex-col justify-between hover:border-secondary transition-colors duration-200"
-          >
-            <div class="space-y-4">
-              <div
-                class="w-12 h-12 rounded bg-navy-surface border border-navy-border flex items-center justify-center text-secondary"
-              >
-                <span
-                  class="material-symbols-outlined text-2xl"
-                  style="font-variation-settings: &quot;FILL&quot; 1"
-                  >local_police</span
-                >
-              </div>
-              <div>
-                <h3
-                  class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase"
-                >
+</div>
+</div>
+<!-- Track 2: AKPOL -->
+<div class="bg-primary-container border border-navy-border rounded p-6 flex flex-col justify-between hover:border-secondary transition-colors duration-200">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded bg-navy-surface border border-navy-border flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" style='font-variation-settings: "FILL" 1'>local_police</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase">
                   AKPOL
                 </h3>
-                <p class="text-xs text-text-muted mt-1 font-body-sm">
+<p class="text-xs text-text-muted mt-1 font-body-sm">
                   Akademi Kepolisian RI
                 </p>
-              </div>
-              <p class="font-body-sm text-body-sm text-text-secondary">
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
                 Fokus TPA, bahasa Inggris, tes akademik, renang 25 meter, dan antropometri.
               </p>
-              <div class="pt-2 border-t border-navy-border space-y-2">
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Simulasi CAT Akademik Polri</span>
-                </div>
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Drill Renang &amp; Jasmani B</span>
-                </div>
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Mental Ideologi &amp; Wawancara PMK</span>
-                </div>
-              </div>
-            </div>
-            <div class="pt-6">
-              <a
-                class="w-full h-10 rounded border border-navy-border hover:border-secondary bg-navy-surface text-text-primary font-label-caps text-label-caps uppercase flex items-center justify-center text-xs tracking-wider transition-colors duration-150"
-                href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20ingin%20konsultasi%20jalur%20persiapan%20AKPOL."
-                target="_blank"
-              >
+
+</div>
+<div class="pt-6">
+<a class="btn-sweep btn-sweep-outline w-full h-10 rounded font-label-caps text-label-caps uppercase flex items-center justify-center text-xs tracking-wider" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20ingin%20konsultasi%20jalur%20persiapan%20AKPOL." target="_blank">
                 Info Jalur AKPOL
               </a>
-            </div>
-          </div>
-          <!-- Track 3: Bintara TNI/POLRI -->
-          <div
-            class="bg-primary-container border border-navy-border rounded p-6 flex flex-col justify-between hover:border-secondary transition-colors duration-200"
-          >
-            <div class="space-y-4">
-              <div
-                class="w-12 h-12 rounded bg-navy-surface border border-navy-border flex items-center justify-center text-secondary"
-              >
-                <span
-                  class="material-symbols-outlined text-2xl"
-                  style="font-variation-settings: &quot;FILL&quot; 1"
-                  >flag</span
-                >
-              </div>
-              <div>
-                <h3
-                  class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase"
-                >
+</div>
+</div>
+<!-- Track 3: Bintara TNI/POLRI -->
+<div class="bg-primary-container border border-navy-border rounded p-6 flex flex-col justify-between hover:border-secondary transition-colors duration-200">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded bg-navy-surface border border-navy-border flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" style='font-variation-settings: "FILL" 1'>flag</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase">
                   Bintara TNI &amp; POLRI
                 </h3>
-                <p class="text-xs text-text-muted mt-1 font-body-sm">
+<p class="text-xs text-text-muted mt-1 font-body-sm">
                   Bintara PTU, Bakomsus, dan Bintara TNI
                 </p>
-              </div>
-              <p class="font-body-sm text-body-sm text-text-secondary">
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
                 Fokus ketahanan jasmani, psikotes kecermatan Pauli/EPPS, dan passing grade akademik.
               </p>
-              <div class="pt-2 border-t border-navy-border space-y-2">
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Koreksi Form Gerakan Jasmani</span>
-                </div>
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Drill Tes Koran &amp; Pauli</span>
-                </div>
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Konsultasi Berkas &amp; Riwayat Hidup</span>
-                </div>
-              </div>
-            </div>
-            <div class="pt-6">
-              <a
-                class="w-full h-10 rounded border border-navy-border hover:border-secondary bg-navy-surface text-text-primary font-label-caps text-label-caps uppercase flex items-center justify-center text-xs tracking-wider transition-colors duration-150"
-                href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20ingin%20konsultasi%20jalur%20Bintara%20TNI%20atau%20Polri."
-                target="_blank"
-              >
+
+</div>
+<div class="pt-6">
+<a class="btn-sweep btn-sweep-outline w-full h-10 rounded font-label-caps text-label-caps uppercase flex items-center justify-center text-xs tracking-wider" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20ingin%20konsultasi%20jalur%20Bintara%20TNI%20atau%20Polri." target="_blank">
                 Info Jalur Bintara
               </a>
-            </div>
-          </div>
-          <!-- Track 4: Sekolah Kedinasan -->
-          <div
-            class="bg-primary-container border border-navy-border rounded p-6 flex flex-col justify-between hover:border-secondary transition-colors duration-200"
-          >
-            <div class="space-y-4">
-              <div
-                class="w-12 h-12 rounded bg-navy-surface border border-navy-border flex items-center justify-center text-secondary"
-              >
-                <span
-                  class="material-symbols-outlined text-2xl"
-                  style="font-variation-settings: &quot;FILL&quot; 1"
-                  >school</span
-                >
-              </div>
-              <div>
-                <h3
-                  class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase"
-                >
+</div>
+</div>
+<!-- Track 4: Sekolah Kedinasan -->
+<div class="bg-primary-container border border-navy-border rounded p-6 flex flex-col justify-between hover:border-secondary transition-colors duration-200">
+<div class="space-y-4">
+<div class="w-12 h-12 rounded bg-navy-surface border border-navy-border flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" style='font-variation-settings: "FILL" 1'>school</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase">
                   Sekolah Kedinasan
                 </h3>
-                <p class="text-xs text-text-muted mt-1 font-body-sm">
+<p class="text-xs text-text-muted mt-1 font-body-sm">
                   IPDN, STAN, Poltekip, STIS, STIN
                 </p>
-              </div>
-              <p class="font-body-sm text-body-sm text-text-secondary">
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">
                 Fokus bedah materi SKD BKN (TWK, TIU, TKP) dan tes fisik instansi.
               </p>
-              <div class="pt-2 border-t border-navy-border space-y-2">
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Sistem Try Out CAT Resmi BKN</span>
-                </div>
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Pembekalan Wawancara Instansi</span>
-                </div>
-                <div
-                  class="flex items-center gap-2 text-xs font-body-sm text-text-secondary"
-                >
-                  <span
-                    class="material-symbols-outlined text-secondary text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >check_circle</span
-                  >
-                  <span class="">Modul Soal Penalaran HOTS</span>
-                </div>
-              </div>
-            </div>
-            <div class="pt-6">
-              <a
-                class="w-full h-10 rounded border border-navy-border hover:border-secondary bg-navy-surface text-text-primary font-label-caps text-label-caps uppercase flex items-center justify-center text-xs tracking-wider transition-colors duration-150"
-                href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20ingin%20konsultasi%20jalur%20Sekolah%20Kedinasan%20(IPDN%2C%20STAN%2C%20STIN%2C%20dll)."
-                target="_blank"
-              >
+
+</div>
+<div class="pt-6">
+<a class="btn-sweep btn-sweep-outline w-full h-10 rounded font-label-caps text-label-caps uppercase flex items-center justify-center text-xs tracking-wider" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20ingin%20konsultasi%20jalur%20Sekolah%20Kedinasan%20(IPDN%2C%20STAN%2C%20STIN%2C%20dll)." target="_blank">
                 Info Jalur Kedinasan
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ================= SECTION 5: PROGRAM & PAKET BELAJAR ================= -->
-      <section
-        class="bg-primary-container border-y border-navy-border py-16 lg:py-24 relative"
-        id="program"
-      >
-        <div
-          class="absolute inset-0 pointer-events-none -z-0 overflow-hidden"
-          aria-hidden="true"
-        >
-          <div
-            class="absolute inset-0 opacity-10"
-            style="
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 5: PROGRAM & PAKET BELAJAR ================= -->
+<section class="bg-primary-container border-y border-navy-border py-16 lg:py-24 relative" id="program">
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="
               background-image:
                 linear-gradient(
                   135deg,
@@ -852,687 +596,265 @@
                 0 0,
                 0 0;
               background-size: 48px 48px;
-            "
-          ></div>
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] opacity-25 pointer-events-none"
-          ></div>
-        </div>
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span
-              class="font-label-caps text-label-caps uppercase text-secondary tracking-widest text-xs font-bold block"
-              >STRUKTUR DIKLAT TERVERIFIKASI</span
-            >
-            <h2
-              class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight"
-            >
+            "></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] opacity-25 pointer-events-none"></div>
+</div>
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+
+<h2 class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight">
               Pilihan Paket Belajar
             </h2>
-            <p class="font-body-md text-body-md text-text-secondary">
+<p class="font-body-md text-body-md text-text-secondary">
               Pilih program sesuai target dan waktu persiapan.
             </p>
-          </div>
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-            <!-- Package 1: Reguler Weekend -->
-            <div
-              class="bg-navy-surface border border-navy-border rounded p-8 flex flex-col justify-between"
-            >
-              <div class="space-y-6">
-                <div class="space-y-1">
-                  <span
-                    class="font-label-caps text-label-caps uppercase text-text-muted text-xs"
-                    >PONDASI AWAL</span
-                  >
-                  <h3
-                    class="font-headline-lg text-headline-lg text-text-primary font-bold uppercase"
-                  >
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+<!-- Package 1: Reguler Weekend -->
+<div class="bg-navy-surface border border-navy-border rounded p-8 flex flex-col justify-between">
+<div class="space-y-6">
+<div class="space-y-1">
+
+<h3 class="font-headline-lg text-headline-lg text-text-primary font-bold uppercase">
                     Kelas Reguler Weekend
                   </h3>
-                  <p class="font-body-sm text-body-sm text-text-secondary">
+<p class="font-body-sm text-body-sm text-text-secondary">
                     Untuk siswa aktif kelas 10 - 12 tanpa mengganggu jam sekolah.
                   </p>
-                </div>
-                <!-- Price Box -->
-                <div class="bg-primary-container border border-navy-border p-4 rounded">
-                  <div class="flex items-center justify-between mb-1">
-                    <span
-                      class="font-label-caps text-label-caps uppercase text-xs text-secondary font-bold"
-                      >BIAYA PENDIDIKAN</span
-                    >
-                    <span class="text-xs text-text-muted"
-                      >Program Reguler</span
-                    >
-                  </div>
-                  <div
-                    class="font-stat-metric-mobile text-stat-metric-mobile text-secondary font-bold"
-                  >
+</div>
+<div class="py-5 my-2 border-y border-navy-border/50 space-y-1">
+                  <div class="text-xs font-label-caps uppercase tracking-wider text-text-muted font-bold">Biaya Pendidikan</div>
+                  <div class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-bold leading-none">
                     Rp 2.750.000
                   </div>
-                  <span class="text-xs text-text-muted block mt-1"
-                    >/ bulan atau periode berjalan</span
-                  >
+                  <div class="text-xs text-text-muted mt-1">/ bulan atau periode berjalan</div>
                 </div>
-                <div class="space-y-3 pt-2">
-                  <div
-                    class="font-label-caps text-label-caps uppercase text-xs text-text-primary font-bold"
-                  >
-                    FASILITAS PROGRAM:
-                  </div>
-                  <ul
-                    class="space-y-2 font-body-sm text-body-sm text-text-secondary"
-                  >
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        >check</span
-                      >
-                      <span class=""
-                        >Sabtu dan Minggu (4 jam/sesi)</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        >check</span
-                      >
-                      <span class=""
-                        >1x sesi jasmani di lintasan per minggu</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        >check</span
-                      >
-                      <span class=""
-                        >Modul cetak dan bank soal CAT</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        >check</span
-                      >
-                      <span class=""
-                        >Tryout bulanan dan evaluasi</span
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="pt-8">
-                <a
-                  class="w-full h-12 rounded border border-navy-border hover:border-secondary bg-primary-container text-text-primary font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider transition-colors duration-150"
-                  href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20ingin%20mendaftar%20Paket%20Reguler%20Weekend."
-                  target="_blank"
-                >
+<div class="pt-8">
+<a class="btn-sweep btn-sweep-outline w-full h-12 rounded font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20ingin%20mendaftar%20Paket%20Reguler%20Weekend." target="_blank">
                   Pilih Kelas Weekend
                 </a>
-              </div>
-            </div>
-            <!-- Package 2: Intensif (Most Popular) -->
-            <div
-              class="bg-navy-surface border-2 border-secondary gold-prestige-rim rounded p-8 flex flex-col justify-between relative transform lg:-translate-y-2"
-            >
-              <div
-                class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-navy-deep px-4 py-1 rounded font-label-caps text-label-caps uppercase text-xs font-bold shadow"
-              >
-                PALING DIREKOMENDASIKAN
-              </div>
-              <div class="space-y-6">
-                <div class="space-y-1">
-                  <span
-                    class="font-label-caps text-label-caps uppercase text-secondary text-xs"
-                    >DRILL LENGKAP</span
-                  >
-                  <h3
-                    class="font-headline-lg text-headline-lg text-text-primary font-bold uppercase"
-                  >
+</div>
+</div>
+<!-- Package 2: Intensif (Most Popular) -->
+<div class="bg-navy-surface border-2 border-secondary gold-prestige-rim rounded p-8 flex flex-col justify-between relative transform lg:-translate-y-2">
+
+<div class="space-y-6">
+<div class="space-y-1">
+
+<h3 class="font-headline-lg text-headline-lg text-text-primary font-bold uppercase">
                     Paket Intensif H-100
                   </h3>
-                  <p class="font-body-sm text-body-sm text-text-secondary">
+<p class="font-body-sm text-body-sm text-text-secondary">
                     Program pemadatan harian jelang pembukaan seleksi resmi.
                   </p>
-                </div>
-                <!-- Price Box -->
-                <div class="bg-primary-container border border-secondary/40 p-4 rounded">
-                  <div class="flex items-center justify-between mb-1">
-                    <span
-                      class="font-label-caps text-label-caps uppercase text-xs text-secondary font-bold"
-                      >INVESTASI DIKLAT</span
-                    >
-                    <span class="text-xs text-text-muted"
-                      >Paket Intensif H-100</span
-                    >
-                  </div>
-                  <div
-                    class="font-stat-metric-mobile text-stat-metric-mobile text-secondary font-bold"
-                  >
+</div>
+<div class="py-5 my-2 border-y border-secondary/40 space-y-1">
+                  <div class="text-xs font-label-caps uppercase tracking-wider text-secondary font-bold">Investasi Diklat</div>
+                  <div class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-bold leading-none">
                     Rp 8.500.000
                   </div>
-                  <span class="text-xs text-text-muted block mt-1"
-                    >Program 3 Bulan Intensif Penuh</span
-                  >
+                  <div class="text-xs text-text-muted mt-1">Program 3 bulan intensif sampai seleksi</div>
                 </div>
-                <div class="space-y-3 pt-2">
-                  <div
-                    class="font-label-caps text-label-caps uppercase text-xs text-text-primary font-bold"
-                  >
-                    FASILITAS UNGGULAN:
-                  </div>
-                  <ul
-                    class="space-y-2 font-body-sm text-body-sm text-text-secondary"
-                  >
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        style="font-variation-settings: &quot;FILL&quot; 1"
-                        >verified</span
-                      >
-                      <span class=""
-                        >Bimbingan Senin - Jumat (akademik dan psikotes)</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        style="font-variation-settings: &quot;FILL&quot; 1"
-                        >verified</span
-                      >
-                      <span class=""
-                        >3x latihan jasmani (lari, pull-up, renang)</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        style="font-variation-settings: &quot;FILL&quot; 1"
-                        >verified</span
-                      >
-                      <span class=""
-                        >Pemeriksaan fisik dan rikes awal</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        style="font-variation-settings: &quot;FILL&quot; 1"
-                        >verified</span
-                      >
-                      <span class="">Tryout CAT BKN Komputer Tiap Minggu</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        style="font-variation-settings: &quot;FILL&quot; 1"
-                        >verified</span
-                      >
-                      <span class=""
-                        >Konseling Karakter &amp; Mental Ideologi Personal</span
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="pt-8">
-                <a
-                  class="w-full h-12 rounded bg-secondary hover:bg-gold-hover text-navy-deep font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider transition-all duration-150 active:scale-95 shadow-md"
-                  href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20ingin%20booking%20Paket%20Intensif%20H-100."
-                  target="_blank"
-                >
+<div class="pt-8">
+<a class="btn-sweep btn-sweep-gold w-full h-12 rounded font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20ingin%20booking%20Paket%20Intensif%20H-100." target="_blank">
                   Daftar Paket Intensif
                 </a>
-              </div>
-            </div>
-            <!-- Package 3: Karantina & Boarding Camp -->
-            <div
-              class="bg-navy-surface border border-navy-border rounded p-8 flex flex-col justify-between"
-            >
-              <div class="space-y-6">
-                <div class="space-y-1">
-                  <span
-                    class="font-label-caps text-label-caps uppercase text-text-muted text-xs"
-                    >FULL BOARDING DISIPLIN</span
-                  >
-                  <h3
-                    class="font-headline-lg text-headline-lg text-text-primary font-bold uppercase"
-                  >
+</div>
+</div>
+<!-- Package 3: Karantina & Boarding Camp -->
+<div class="bg-navy-surface border border-navy-border rounded p-8 flex flex-col justify-between">
+<div class="space-y-6">
+<div class="space-y-1">
+
+<h3 class="font-headline-lg text-headline-lg text-text-primary font-bold uppercase">
                     Karantina Eksekutif
                   </h3>
-                  <p class="font-body-sm text-body-sm text-text-secondary">
+<p class="font-body-sm text-body-sm text-text-secondary">
                     Program asrama dengan pembinaan disiplin penuh.
                   </p>
-                </div>
-                <!-- Price Box -->
-                <div class="bg-primary-container border border-navy-border p-4 rounded">
-                  <div class="flex items-center justify-between mb-1">
-                    <span
-                      class="font-label-caps text-label-caps uppercase text-xs text-secondary font-bold"
-                      >ALL-IN BOARDING CAMP</span
-                    >
-                    <span class="text-xs text-text-muted"
-                      >Biaya Camp Lengkap</span
-                    >
-                  </div>
-                  <div
-                    class="font-stat-metric-mobile text-stat-metric-mobile text-secondary font-bold"
-                  >
+</div>
+<div class="py-5 my-2 border-y border-navy-border/50 space-y-1">
+                  <div class="text-xs font-label-caps uppercase tracking-wider text-text-muted font-bold">All-in Boarding Camp</div>
+                  <div class="font-stat-metric-mobile lg:font-stat-metric text-stat-metric-mobile lg:text-stat-metric text-secondary font-bold leading-none">
                     Rp 19.500.000
                   </div>
-                  <span class="text-xs text-text-muted block mt-1"
-                    >Termasuk akomodasi asrama &amp; makan atlet</span
-                  >
+                  <div class="text-xs text-text-muted mt-1">Program karantina penuh 45 hari</div>
                 </div>
-                <div class="space-y-3 pt-2">
-                  <div
-                    class="font-label-caps text-label-caps uppercase text-xs text-text-primary font-bold"
-                  >
-                    FASILITAS PROGRAM:
-                  </div>
-                  <ul
-                    class="space-y-2 font-body-sm text-body-sm text-text-secondary"
-                  >
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        >check</span
-                      >
-                      <span class=""
-                        >Fasilitas asrama terjadwal</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        >check</span
-                      >
-                      <span class=""
-                        >Latihan fisik pagi dan sore</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        >check</span
-                      >
-                      <span class=""
-                        >Menu katering gizi tinggi kalibrasi massa tubuh</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-2">
-                      <span
-                        class="material-symbols-outlined text-secondary text-base shrink-0"
-                        >check</span
-                      >
-                      <span class=""
-                        >Simulasi tes berkala</span
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="pt-8">
-                <a
-                  class="w-full h-12 rounded border border-navy-border hover:border-secondary bg-primary-container text-text-primary font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider transition-colors duration-150"
-                  href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20ingin%20informasi%20lengkap%20Karantina%20Boarding%20Camp."
-                  target="_blank"
-                >
+<div class="pt-8">
+<a class="btn-sweep btn-sweep-outline w-full h-12 rounded font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20ingin%20informasi%20lengkap%20Karantina%20Boarding%20Camp." target="_blank">
                   Pilih Karantina
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ================= SECTION 6: KENAPA BIMBEL INI (KEUNGGULAN) ================= -->
-      <section
-        class="py-16 lg:py-24 max-w-6xl mx-auto px-6 w-full relative"
-        id="keunggulan"
-      >
-        <div
-          class="absolute inset-0 pointer-events-none -z-0 overflow-hidden"
-          aria-hidden="true"
-        >
-          <div
-            class="absolute top-0 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-20"
-          ></div>
-          <div
-            class="absolute bottom-0 left-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl opacity-20"
-          ></div>
-          <div
-            class="absolute inset-0 opacity-10"
-            style="
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 6: KENAPA BIMBEL INI (KEUNGGULAN) ================= -->
+<section class="py-16 lg:py-24 max-w-6xl mx-auto px-6 w-full relative" id="keunggulan">
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
+<div class="absolute top-0 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-20"></div>
+<div class="absolute bottom-0 left-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl opacity-20"></div>
+<div class="absolute inset-0 opacity-10" style="
               background-image: radial-gradient(
                 circle at 50% 50%,
                 rgba(184, 198, 238, 0.06) 1.5px,
                 transparent 1.5px
               );
               background-size: 24px 24px;
-            "
-          ></div>
-        </div>
-        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <span
-            class="font-label-caps text-label-caps uppercase text-secondary tracking-widest text-xs font-bold block"
-            >STANDAR KUALITAS INSTITUSI</span
-          >
-          <h2
-            class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight"
-          >
+            "></div>
+</div>
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+
+<h2 class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight">
             Keunggulan Pembinaan
           </h2>
-          <p class="font-body-md text-body-md text-text-secondary">
+<p class="font-body-md text-body-md text-text-secondary">
             Standar menyeluruh untuk fisik, akademik, dan mental.
           </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div
-            class="bg-primary-container border border-navy-border rounded overflow-hidden flex flex-col justify-between hover:border-secondary transition-colors duration-200"
-          >
-            <div class="relative h-52 w-full overflow-hidden">
-              <img
-                alt="Indonesian cadet candidates studying together and consulting with a mentor psychologist"
-                class="w-full h-full object-cover object-center"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTHc8SFaLVD_eYz7W_dmrvgYUSbj7NXBUlEvCeht8ZCzFQ1I7Zcnu3ui8KOFI1jbOsSm2q8CKy6OjeVk3By-xQRG3uo6jWRZaw65T-Pm23x5x8rxXoYUBfarAxG2_l4yWv3yvcqyL41zuPNRUKqATQ_bSYUdiKQ_YFpLYn5mI8mII1ugkZajw3m5kiF2ImjUSlmBXw_tbf50ukBQMDGGtp3aeMW4lbq-hTh_WET4Q"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent"
-              ></div>
-              <div
-                class="absolute top-3 left-3 bg-navy-surface/90 border border-secondary text-secondary px-3 py-1 rounded text-xs font-label-caps uppercase font-bold tracking-wider"
-              >
-                Mentoring &amp; Psikologi
-              </div>
-            </div>
-            <div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
-              <div class="space-y-2">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="w-10 h-10 rounded bg-navy-surface border border-secondary flex items-center justify-center text-secondary shrink-0"
-                  >
-                    <span
-                      class="material-symbols-outlined text-2xl"
-                      style="font-variation-settings: &quot;FILL&quot; 1"
-                      >military_tech</span
-                    >
-                  </div>
-                  <h3
-                    class="font-headline-md text-headline-md text-text-primary font-bold uppercase leading-tight"
-                  >
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-primary-container border border-navy-border rounded overflow-hidden flex flex-col justify-between hover:border-secondary transition-colors duration-200">
+
+<div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-navy-surface border border-secondary flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl" style='font-variation-settings: "FILL" 1'>military_tech</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold uppercase leading-tight">
                     Pelatih Berpengalaman
                   </h3>
-                </div>
-                <p
-                  class="font-body-md text-body-md text-text-secondary leading-relaxed"
-                >
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
                   Dibimbing praktisi panitia seleksi, pelatih jasmani bersertifikat, dan pengajar materi dinas.
                 </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-primary-container border border-navy-border rounded overflow-hidden flex flex-col justify-between hover:border-secondary transition-colors duration-200"
-          >
-            <div class="relative h-52 w-full overflow-hidden">
-              <img
-                alt="Latihan Fisik &amp; Pull-Up Terstandar Taruna di lapangan"
-                class="w-full h-full object-cover object-center"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ5CdO3lJrDdo0HhMWJKxQfmvMlFKyDK7U0PTHWE0IjZXzd4YIICsFzt8cu_h9akYrXmFXmNZHKja8posifX-74NEhoeIV9DaCkzQ-k4dupPh9acgsy5cV86Zw6Ex9d6Svbsa3gNzjsNk_nrjDGL5boAWNVRq-bVe79WyaX2OmaNfwZwSga5YZJ1D1yFlW3kh5zrWoOKiN1D4uH52jO4rQD4nw-bEVxzBVnb-JvY0"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent"
-              ></div>
-              <div
-                class="absolute top-3 left-3 bg-navy-surface/90 border border-secondary text-secondary px-3 py-1 rounded text-xs font-label-caps uppercase font-bold tracking-wider"
-              >
-                Latihan Jasmani &amp; Pull-Up Terstandar
-              </div>
-            </div>
-            <div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
-              <div class="space-y-2">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="w-10 h-10 rounded bg-navy-surface border border-secondary flex items-center justify-center text-secondary shrink-0"
-                  >
-                    <span
-                      class="material-symbols-outlined text-2xl"
-                      style="font-variation-settings: &quot;FILL&quot; 1"
-                      >fitness_center</span
-                    >
-                  </div>
-                  <h3
-                    class="font-headline-md text-headline-md text-text-primary font-bold uppercase leading-tight"
-                  >
+</div>
+</div>
+</div>
+<div class="bg-primary-container border border-navy-border rounded overflow-hidden flex flex-col justify-between hover:border-secondary transition-colors duration-200">
+
+<div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-navy-surface border border-secondary flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl" style='font-variation-settings: "FILL" 1'>fitness_center</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold uppercase leading-tight">
                     Latihan Fisik Terukur
                   </h3>
-                </div>
-                <p
-                  class="font-body-md text-body-md text-text-secondary leading-relaxed"
-                >
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
                   Latihan di lintasan standar dengan pantauan denyut jantung, koreksi postur, dan teknik renang.
                 </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-primary-container border border-navy-border rounded overflow-hidden flex flex-col justify-between hover:border-secondary transition-colors duration-200"
-          >
-            <div class="relative h-52 w-full overflow-hidden">
-              <img
-                alt="Simulasi CAT SKD &amp; Akademik Berbasis Komputer di Lab Modern"
-                class="w-full h-full object-cover object-center"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuABZIYqDeYVQJXf2NMqr0-9Qpa1-DZP06i-MgQLXWcdj0MB69omatGyvvgFrsp2JGvKJkZgdQfnZfxGnVdqLI_kH28dNGRorLn7a4Sv1TDlr1s_ehirSG6hJKK9gqhrT6fZiLNRCtNbNVPiwvjoWwXlnVmWbxGlusryg_voDs8K7XYMG-989nvw0N3GvtaZeJQckpzar1eO_zUa0zghnZ0wW4QmqJssDTI9NGHjPkU"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent"
-              ></div>
-              <div
-                class="absolute top-3 left-3 bg-navy-surface/90 border border-secondary text-secondary px-3 py-1 rounded text-xs font-label-caps uppercase font-bold tracking-wider"
-              >
-                Simulasi CAT SKD &amp; Akademik Berbasis Komputer
-              </div>
-            </div>
-            <div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
-              <div class="space-y-2">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="w-10 h-10 rounded bg-navy-surface border border-secondary flex items-center justify-center text-secondary shrink-0"
-                  >
-                    <span
-                      class="material-symbols-outlined text-2xl"
-                      style="font-variation-settings: &quot;FILL&quot; 1"
-                      >computer</span
-                    >
-                  </div>
-                  <h3
-                    class="font-headline-md text-headline-md text-text-primary font-bold uppercase leading-tight"
-                  >
+</div>
+</div>
+</div>
+<div class="bg-primary-container border border-navy-border rounded overflow-hidden flex flex-col justify-between hover:border-secondary transition-colors duration-200">
+
+<div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-navy-surface border border-secondary flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl" style='font-variation-settings: "FILL" 1'>computer</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold uppercase leading-tight">
                     Simulasi CAT Standar BKN
                   </h3>
-                </div>
-                <p
-                  class="font-body-md text-body-md text-text-secondary leading-relaxed"
-                >
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
                   Lab komputer dengan sistem mirip ujian resmi BKN dan Polri. Nilai terpantau mingguan.
                 </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-primary-container border border-navy-border rounded overflow-hidden flex flex-col justify-between hover:border-secondary transition-colors duration-200"
-          >
-            <div class="relative h-52 w-full overflow-hidden">
-              <img
-                alt="Konseling Psikologi &amp; Pembinaan Mental Ideologi Taruna"
-                class="w-full h-full object-cover object-center"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTHc8SFaLVD_eYz7W_dmrvgYUSbj7NXBUlEvCeht8ZCzFQ1I7Zcnu3ui8KOFI1jbOsSm2q8CKy6OjeVk3By-xQRG3uo6jWRZaw65T-Pm23x5x8rxXoYUBfarAxG2_l4yWv3yvcqyL41zuPNRUKqATQ_bSYUdiKQ_YFpLYn5mI8mII1ugkZajw3m5kiF2ImjUSlmBXw_tbf50ukBQMDGGtp3aeMW4lbq-hTh_WET4Q"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent"
-              ></div>
-              <div
-                class="absolute top-3 left-3 bg-navy-surface/90 border border-secondary text-secondary px-3 py-1 rounded text-xs font-label-caps uppercase font-bold tracking-wider"
-              >
-                Konseling Psikologi &amp; Pembinaan Mental Ideologi
-              </div>
-            </div>
-            <div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
-              <div class="space-y-2">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="w-10 h-10 rounded bg-navy-surface border border-secondary flex items-center justify-center text-secondary shrink-0"
-                  >
-                    <span
-                      class="material-symbols-outlined text-2xl"
-                      style="font-variation-settings: &quot;FILL&quot; 1"
-                      >psychology</span
-                    >
-                  </div>
-                  <h3
-                    class="font-headline-md text-headline-md text-text-primary font-bold uppercase leading-tight"
-                  >
+</div>
+</div>
+</div>
+<div class="bg-primary-container border border-navy-border rounded overflow-hidden flex flex-col justify-between hover:border-secondary transition-colors duration-200">
+
+<div class="p-6 space-y-3 flex-grow flex flex-col justify-between">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-navy-surface border border-secondary flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-2xl" style='font-variation-settings: "FILL" 1'>psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold uppercase leading-tight">
                     Pembinaan Psikotes &amp; Karakter
                   </h3>
-                </div>
-                <p
-                  class="font-body-md text-body-md text-text-secondary leading-relaxed"
-                >
+</div>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
                   Fokus grafik kepribadian, ketahanan kerja, kecermatan, dan wawancara sikap.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-12 bg-navy-surface border-y border-navy-border">
-        <div class="max-w-6xl mx-auto px-6">
-          <div
-            class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4"
-          >
-            <div>
-              <span
-                class="font-label-caps text-label-caps uppercase text-secondary tracking-widest text-xs font-bold block"
-                >DOKUMENTASI PEMBINAAN RESMI</span
-              >
-              <h3
-                class="font-headline-lg text-headline-lg text-text-primary font-bold uppercase tracking-tight"
-              >
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 bg-navy-surface border-y border-navy-border">
+<div class="max-w-6xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+
+<h3 class="font-headline-lg text-headline-lg text-text-primary font-bold uppercase tracking-tight">
                 Fasilitas Latihan
               </h3>
-            </div>
-            <p class="font-body-sm text-body-sm text-text-secondary max-w-md">
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary max-w-md">
               Sarana lengkap untuk persiapan fisik dan ujian komputer.
             </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div
-              class="group relative rounded overflow-hidden border border-navy-border bg-primary-container"
-            >
-              <div class="h-64 w-full overflow-hidden">
-                <img
-                  alt="Latihan Samapta Pull-up di Lapangan Terbuka"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ5CdO3lJrDdo0HhMWJKxQfmvMlFKyDK7U0PTHWE0IjZXzd4YIICsFzt8cu_h9akYrXmFXmNZHKja8posifX-74NEhoeIV9DaCkzQ-k4dupPh9acgsy5cV86Zw6Ex9d6Svbsa3gNzjsNk_nrjDGL5boAWNVRq-bVe79WyaX2OmaNfwZwSga5YZJ1D1yFlW3kh5zrWoOKiN1D4uH52jO4rQD4nw-bEVxzBVnb-JvY0"
-                />
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent"
-              ></div>
-              <div class="absolute bottom-0 inset-x-0 p-4 space-y-1">
-                <span
-                  class="text-xs font-label-caps uppercase text-secondary font-bold tracking-wider"
-                  >Jasmani &amp; Kebugaran</span
-                >
-                <h4
-                  class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase"
-                >
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="group relative rounded overflow-hidden border border-navy-border bg-primary-container">
+<div class="h-64 w-full overflow-hidden">
+<img alt="Latihan Samapta Pull-up di Lapangan Terbuka" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ5CdO3lJrDdo0HhMWJKxQfmvMlFKyDK7U0PTHWE0IjZXzd4YIICsFzt8cu_h9akYrXmFXmNZHKja8posifX-74NEhoeIV9DaCkzQ-k4dupPh9acgsy5cV86Zw6Ex9d6Svbsa3gNzjsNk_nrjDGL5boAWNVRq-bVe79WyaX2OmaNfwZwSga5YZJ1D1yFlW3kh5zrWoOKiN1D4uH52jO4rQD4nw-bEVxzBVnb-JvY0"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent"></div>
+<div class="absolute bottom-0 inset-x-0 p-4 space-y-1">
+<span class="text-xs font-label-caps uppercase text-secondary font-bold tracking-wider">Jasmani &amp; Kebugaran</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase">
                   Pusat Fisik &amp; Samapta
                 </h4>
-                <p class="text-xs text-text-secondary font-body-sm">
+<p class="text-xs text-text-secondary font-body-sm">
                   Lintasan lari, tiang pull-up, dan drill fisik bersama pelatih.
                 </p>
-              </div>
-            </div>
-            <div
-              class="group relative rounded overflow-hidden border border-secondary gold-prestige-rim bg-primary-container"
-            >
-              <div class="h-64 w-full overflow-hidden">
-                <img
-                  alt="Lab CAT Komputer Berstandar BKN &amp; Mabes"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuABZIYqDeYVQJXf2NMqr0-9Qpa1-DZP06i-MgQLXWcdj0MB69omatGyvvgFrsp2JGvKJkZgdQfnZfxGnVdqLI_kH28dNGRorLn7a4Sv1TDlr1s_ehirSG6hJKK9gqhrT6fZiLNRCtNbNVPiwvjoWwXlnVmWbxGlusryg_voDs8K7XYMG-989nvw0N3GvtaZeJQckpzar1eO_zUa0zghnZ0wW4QmqJssDTI9NGHjPkU"
-                />
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent"
-              ></div>
-              <div
-                class="absolute top-3 right-3 bg-secondary text-navy-deep px-3 py-0.5 rounded text-xs font-label-caps uppercase font-bold shadow"
-              >
-                Standar CAT BKN
-              </div>
-              <div class="absolute bottom-0 inset-x-0 p-4 space-y-1">
-                <span
-                  class="text-xs font-label-caps uppercase text-secondary font-bold tracking-wider"
-                  >Laboratorium Akademik</span
-                >
-                <h4
-                  class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase"
-                >
+</div>
+</div>
+<div class="group relative rounded overflow-hidden border border-secondary gold-prestige-rim bg-primary-container">
+<div class="h-64 w-full overflow-hidden">
+<img alt="Lab CAT Komputer Berstandar BKN &amp; Mabes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABZIYqDeYVQJXf2NMqr0-9Qpa1-DZP06i-MgQLXWcdj0MB69omatGyvvgFrsp2JGvKJkZgdQfnZfxGnVdqLI_kH28dNGRorLn7a4Sv1TDlr1s_ehirSG6hJKK9gqhrT6fZiLNRCtNbNVPiwvjoWwXlnVmWbxGlusryg_voDs8K7XYMG-989nvw0N3GvtaZeJQckpzar1eO_zUa0zghnZ0wW4QmqJssDTI9NGHjPkU"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent"></div>
+
+<div class="absolute bottom-0 inset-x-0 p-4 space-y-1">
+<span class="text-xs font-label-caps uppercase text-secondary font-bold tracking-wider">Laboratorium Akademik</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase">
                   Laboratorium CAT
                 </h4>
-                <p class="text-xs text-text-secondary font-body-sm">
+<p class="text-xs text-text-secondary font-body-sm">
                   Simulasi ujian komputer untuk drill SKD dan psikotes kecermatan.
                 </p>
-              </div>
-            </div>
-            <div
-              class="group relative rounded overflow-hidden border border-navy-border bg-primary-container"
-            >
-              <div class="h-64 w-full overflow-hidden">
-                <img
-                  alt="Diskusi dan Konsultasi Psikologi Akademik"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTHc8SFaLVD_eYz7W_dmrvgYUSbj7NXBUlEvCeht8ZCzFQ1I7Zcnu3ui8KOFI1jbOsSm2q8CKy6OjeVk3By-xQRG3uo6jWRZaw65T-Pm23x5x8rxXoYUBfarAxG2_l4yWv3yvcqyL41zuPNRUKqATQ_bSYUdiKQ_YFpLYn5mI8mII1ugkZajw3m5kiF2ImjUSlmBXw_tbf50ukBQMDGGtp3aeMW4lbq-hTh_WET4Q"
-                />
-              </div>
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent"
-              ></div>
-              <div class="absolute bottom-0 inset-x-0 p-4 space-y-1">
-                <span
-                  class="text-xs font-label-caps uppercase text-secondary font-bold tracking-wider"
-                  >Konsultasi &amp; Karakter</span
-                >
-                <h4
-                  class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase"
-                >
+</div>
+</div>
+<div class="group relative rounded overflow-hidden border border-navy-border bg-primary-container">
+<div class="h-64 w-full overflow-hidden">
+<img alt="Diskusi dan Konsultasi Psikologi Akademik" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTHc8SFaLVD_eYz7W_dmrvgYUSbj7NXBUlEvCeht8ZCzFQ1I7Zcnu3ui8KOFI1jbOsSm2q8CKy6OjeVk3By-xQRG3uo6jWRZaw65T-Pm23x5x8rxXoYUBfarAxG2_l4yWv3yvcqyL41zuPNRUKqATQ_bSYUdiKQ_YFpLYn5mI8mII1ugkZajw3m5kiF2ImjUSlmBXw_tbf50ukBQMDGGtp3aeMW4lbq-hTh_WET4Q"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent"></div>
+<div class="absolute bottom-0 inset-x-0 p-4 space-y-1">
+<span class="text-xs font-label-caps uppercase text-secondary font-bold tracking-wider">Konsultasi &amp; Karakter</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold uppercase">
                   Ruang Konseling
                 </h4>
-                <p class="text-xs text-text-secondary font-body-sm">
+<p class="text-xs text-text-secondary font-body-sm">
                   Ruang evaluasi hasil belajar, konsultasi psikologi, dan simulasi wawancara.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ================= SECTION 7: TESTIMONI ALUMNI ================= -->
-      <section
-        class="bg-primary-container border-y border-navy-border py-16 lg:py-24 relative"
-        id="alumni"
-      >
-        <div
-          class="absolute inset-0 pointer-events-none -z-0 overflow-hidden"
-          aria-hidden="true"
-        >
-          <div
-            class="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-secondary/5 rounded-full blur-[80px] opacity-25"
-          ></div>
-          <div
-            class="absolute inset-0 opacity-10"
-            style="
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 7: TESTIMONI ALUMNI ================= -->
+<section class="bg-primary-container border-y border-navy-border py-16 lg:py-24 relative" id="alumni">
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
+<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-secondary/5 rounded-full blur-[80px] opacity-25"></div>
+<div class="absolute inset-0 opacity-10" style="
               background-image: repeating-linear-gradient(
                 45deg,
                 rgba(236, 194, 70, 0.04) 0,
@@ -1540,527 +862,278 @@
                 transparent 0,
                 transparent 40px
               );
-            "
-          ></div>
-        </div>
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span
-              class="font-label-caps text-label-caps uppercase text-secondary tracking-widest text-xs font-bold block"
-              >JEJAK PRESTASI TARUNA</span
-            >
-            <h2
-              class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight"
-            >
+            "></div>
+</div>
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+
+<h2 class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight">
               Kisah Alumni
             </h2>
-            <p class="font-body-md text-body-md text-text-secondary">
+<p class="font-body-md text-body-md text-text-secondary">
               Hasil pembinaan siswa yang lolos ke akademi dan kedinasan.
             </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Testimonial 1 -->
-            <div
-              class="bg-navy-surface border border-navy-border rounded p-6 flex flex-col justify-between"
-            >
-              <div class="space-y-4">
-                <div class="flex items-center gap-1 text-secondary">
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-text-secondary italic">
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-navy-surface border border-navy-border rounded p-6 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary italic">
                   "Awal latihan nilai jasmani 45 karena belum bisa pull-up. Dalam 4 bulan, form pull-up mencapai 16 repetisi dan nilai jasmani akhir 88 di Pantukhir."
                 </p>
-              </div>
-              <div
-                class="pt-6 border-t border-navy-border flex items-center gap-4 mt-6"
-              >
-                <div
-                  class="w-12 h-12 rounded-full bg-navy-subtle border border-secondary flex items-center justify-center font-bold text-secondary text-lg"
-                >
+</div>
+<div class="pt-6 border-t border-navy-border flex items-center gap-4 mt-6">
+<div class="w-12 h-12 rounded-full bg-navy-subtle border border-secondary flex items-center justify-center font-bold text-secondary text-lg">
                   RA
                 </div>
-                <div>
-                  <div
-                    class="font-headline-sm text-headline-sm text-text-primary font-bold"
-                  >
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary font-bold">
                     R. Adhitama
                   </div>
-                  <div
-                    class="text-xs text-secondary font-label-caps text-label-caps uppercase"
-                  >
+<div class="text-xs text-secondary font-label-caps text-label-caps uppercase">
                     Lolos Taruna AKMIL 2024
                   </div>
-                  <div class="text-xs text-text-muted">
+<div class="text-xs text-text-muted">
                     Polda/Kodam Jawa Barat
                   </div>
-                </div>
-              </div>
-            </div>
-            <!-- Testimonial 2 -->
-            <div
-              class="bg-navy-surface border border-navy-border rounded p-6 flex flex-col justify-between"
-            >
-              <div class="space-y-4">
-                <div class="flex items-center gap-1 text-secondary">
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-text-secondary italic">
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-navy-surface border border-navy-border rounded p-6 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary italic">
                   "Simulasi CAT bimbel ini setara ujian asli. Saya terbiasa dengan soal penalaran TWK dan meraih skor total 448 di SKD BKN."
                 </p>
-              </div>
-              <div
-                class="pt-6 border-t border-navy-border flex items-center gap-4 mt-6"
-              >
-                <div
-                  class="w-12 h-12 rounded-full bg-navy-subtle border border-secondary flex items-center justify-center font-bold text-secondary text-lg"
-                >
+</div>
+<div class="pt-6 border-t border-navy-border flex items-center gap-4 mt-6">
+<div class="w-12 h-12 rounded-full bg-navy-subtle border border-secondary flex items-center justify-center font-bold text-secondary text-lg">
                   SN
                 </div>
-                <div>
-                  <div
-                    class="font-headline-sm text-headline-sm text-text-primary font-bold"
-                  >
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary font-bold">
                     Siti Nurhaliza
                   </div>
-                  <div
-                    class="text-xs text-secondary font-label-caps text-label-caps uppercase"
-                  >
+<div class="text-xs text-secondary font-label-caps text-label-caps uppercase">
                     Praja IPDN Jatinangor 2023
                   </div>
-                  <div class="text-xs text-text-muted">
+<div class="text-xs text-text-muted">
                     Kontingen Jawa Tengah
                   </div>
-                </div>
-              </div>
-            </div>
-            <!-- Testimonial 3 -->
-            <div
-              class="bg-navy-surface border border-navy-border rounded p-6 flex flex-col justify-between"
-            >
-              <div class="space-y-4">
-                <div class="flex items-center gap-1 text-secondary">
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                  <span
-                    class="material-symbols-outlined text-sm"
-                    style="font-variation-settings: &quot;FILL&quot; 1"
-                    >star</span
-                  >
-                </div>
-                <p class="font-body-md text-body-md text-text-secondary italic">
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-navy-surface border border-navy-border rounded p-6 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+<span class="material-symbols-outlined text-sm" style='font-variation-settings: "FILL" 1'>star</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary italic">
                   "Sesi wawancara dan tes kecermatan sangat membantu. Saya diajari bersikap tegas, jujur, dan percaya diri di hadapan penguji."
                 </p>
-              </div>
-              <div
-                class="pt-6 border-t border-navy-border flex items-center gap-4 mt-6"
-              >
-                <div
-                  class="w-12 h-12 rounded-full bg-navy-subtle border border-secondary flex items-center justify-center font-bold text-secondary text-lg"
-                >
+</div>
+<div class="pt-6 border-t border-navy-border flex items-center gap-4 mt-6">
+<div class="w-12 h-12 rounded-full bg-navy-subtle border border-secondary flex items-center justify-center font-bold text-secondary text-lg">
                   BP
                 </div>
-                <div>
-                  <div
-                    class="font-headline-sm text-headline-sm text-text-primary font-bold"
-                  >
+<div>
+<div class="font-headline-sm text-headline-sm text-text-primary font-bold">
                     Bagas Pratama
                   </div>
-                  <div
-                    class="text-xs text-secondary font-label-caps text-label-caps uppercase"
-                  >
+<div class="text-xs text-secondary font-label-caps text-label-caps uppercase">
                     Taruna AKPOL 2024
                   </div>
-                  <div class="text-xs text-text-muted">Polda Metro Jaya</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ================= SECTION 8: FAQ SINGKAT ================= -->
-      <section
-        class="py-16 lg:py-24 max-w-4xl mx-auto px-6 w-full relative"
-        id="faq"
-      >
-        <div
-          class="absolute inset-0 pointer-events-none -z-0 overflow-hidden"
-          aria-hidden="true"
-        >
-          <div
-            class="absolute inset-0 opacity-10"
-            style="
+<div class="text-xs text-text-muted">Polda Metro Jaya</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= SECTION 8: FAQ SINGKAT ================= -->
+<section class="py-16 lg:py-24 max-w-4xl mx-auto px-6 w-full relative" id="faq">
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none -z-0 overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="
               background-image: radial-gradient(
                 rgba(184, 198, 238, 0.06) 1px,
                 transparent 1px
               );
               background-size: 20px 20px;
-            "
-          ></div>
-          <div
-            class="absolute inset-0 bg-gradient-to-b from-navy-deep via-transparent to-navy-deep opacity-80"
-          ></div>
-        </div>
-        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <span
-            class="font-label-caps text-label-caps uppercase text-secondary tracking-widest text-xs font-bold block"
-            >INFORMASI &amp; KETENTUAN</span
-          >
-          <h2
-            class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight"
-          >
+            "></div>
+<div class="absolute inset-0 bg-gradient-to-b from-navy-deep via-transparent to-navy-deep opacity-80"></div>
+</div>
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+
+<h2 class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight">
             Pertanyaan Umum
           </h2>
-          <p class="font-body-md text-body-md text-text-secondary">
+<p class="font-body-md text-body-md text-text-secondary">
             Jawaban seputar pendaftaran, metode latihan, dan jadwal.
           </p>
-        </div>
-        <div class="space-y-4">
-          <details
-            class="bg-primary-container border border-navy-border rounded group"
-          >
-            <summary
-              class="p-6 cursor-pointer flex items-center justify-between font-headline-sm text-headline-sm text-text-primary font-semibold select-none"
-            >
-              <span class=""
-                >Apakah calon siswa yang fisiknya masih nol bisa
-                bergabung?</span
-              >
-              <span
-                class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180"
-                >expand_more</span
-              >
-            </summary>
-            <div
-              class="px-6 pb-6 text-text-secondary font-body-md text-body-md border-t border-navy-border/50 pt-4 leading-relaxed"
-            >
+</div>
+<div class="space-y-4">
+<details class="bg-primary-container border border-navy-border rounded group">
+<summary class="p-6 cursor-pointer flex items-center justify-between font-headline-sm text-headline-sm text-text-primary font-semibold select-none">
+<span class="">Apakah calon siswa yang fisiknya masih nol bisa
+                bergabung?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-text-secondary font-body-md text-body-md border-t border-navy-border/50 pt-4 leading-relaxed">
               Bisa. Latihan diawali evaluasi kondisi fisik untuk cegah cedera sebelum intensitas dinaikkan.
             </div>
-          </details>
-          <details
-            class="bg-primary-container border border-navy-border rounded group"
-          >
-            <summary
-              class="p-6 cursor-pointer flex items-center justify-between font-headline-sm text-headline-sm text-text-primary font-semibold select-none"
-            >
-              <span class=""
-                >Bagaimana jadwal latihan fisik agar tidak mengganggu pelajaran
-                sekolah?</span
-              >
-              <span
-                class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180"
-                >expand_more</span
-              >
-            </summary>
-            <div
-              class="px-6 pb-6 text-text-secondary font-body-md text-body-md border-t border-navy-border/50 pt-4 leading-relaxed"
-            >
+</details>
+<details class="bg-primary-container border border-navy-border rounded group">
+<summary class="p-6 cursor-pointer flex items-center justify-between font-headline-sm text-headline-sm text-text-primary font-semibold select-none">
+<span class="">Bagaimana jadwal latihan fisik agar tidak mengganggu pelajaran
+                sekolah?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-text-secondary font-body-md text-body-md border-t border-navy-border/50 pt-4 leading-relaxed">
               Tersedia kelas weekend dan jadwal latihan fisik sore hari setelah jam sekolah.
             </div>
-          </details>
-          <details
-            class="bg-primary-container border border-navy-border rounded group"
-          >
-            <summary
-              class="p-6 cursor-pointer flex items-center justify-between font-headline-sm text-headline-sm text-text-primary font-semibold select-none"
-            >
-              <span class=""
-                >Apa perbedaan mendasar Kelas Reguler dengan Kelas
-                Karantina?</span
-              >
-              <span
-                class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180"
-                >expand_more</span
-              >
-            </summary>
-            <div
-              class="px-6 pb-6 text-text-secondary font-body-md text-body-md border-t border-navy-border/50 pt-4 leading-relaxed"
-            >
+</details>
+<details class="bg-primary-container border border-navy-border rounded group">
+<summary class="p-6 cursor-pointer flex items-center justify-between font-headline-sm text-headline-sm text-text-primary font-semibold select-none">
+<span class="">Apa perbedaan mendasar Kelas Reguler dengan Kelas
+                Karantina?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-text-secondary font-body-md text-body-md border-t border-navy-border/50 pt-4 leading-relaxed">
               Reguler sistem non-asrama. Karantina program asrama penuh dengan jadwal latihan dan nutrisi teratur.
             </div>
-          </details>
-          <details
-            class="bg-primary-container border border-navy-border rounded group"
-          >
-            <summary
-              class="p-6 cursor-pointer flex items-center justify-between font-headline-sm text-headline-sm text-text-primary font-semibold select-none"
-            >
-              <span class="">Apakah ada jaminan pasti lolos seleksi?</span>
-              <span
-                class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180"
-                >expand_more</span
-              >
-            </summary>
-            <div
-              class="px-6 pb-6 text-text-secondary font-body-md text-body-md border-t border-navy-border/50 pt-4 leading-relaxed"
-            >
+</details>
+<details class="bg-primary-container border border-navy-border rounded group">
+<summary class="p-6 cursor-pointer flex items-center justify-between font-headline-sm text-headline-sm text-text-primary font-semibold select-none">
+<span class="">Apakah ada jaminan pasti lolos seleksi?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-text-secondary font-body-md text-body-md border-t border-navy-border/50 pt-4 leading-relaxed">
               Seleksi resmi diselenggarakan instansi terkait. Kami menjamin bimbingan intensif hingga target passing grade dan pendampingan ulang bila belum lolos.
             </div>
-          </details>
-          <details
-            class="bg-primary-container border border-navy-border rounded group"
-          >
-            <summary
-              class="p-6 cursor-pointer flex items-center justify-between font-headline-sm text-headline-sm text-text-primary font-semibold select-none"
-            >
-              <span class=""
-                >Bagaimana cara pendaftaran dan verifikasi awal data
-                siswa?</span
-              >
-              <span
-                class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180"
-                >expand_more</span
-              >
-            </summary>
-            <div
-              class="px-6 pb-6 text-text-secondary font-body-md text-body-md border-t border-navy-border/50 pt-4 leading-relaxed"
-            >
+</details>
+<details class="bg-primary-container border border-navy-border rounded group">
+<summary class="p-6 cursor-pointer flex items-center justify-between font-headline-sm text-headline-sm text-text-primary font-semibold select-none">
+<span class="">Bagaimana cara pendaftaran dan verifikasi awal data
+                siswa?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-text-secondary font-body-md text-body-md border-t border-navy-border/50 pt-4 leading-relaxed">
               Hubungi kami lewat WhatsApp untuk konsultasi awal, cek fisik dasar, dan jadwal tes diagnostik gratis.
             </div>
-          </details>
-        </div>
-      </section>
-      <!-- Patriotic Ribbon Divider -->
-      <div class="w-full flex h-1">
-        <div class="w-1/2 bg-red-ribbon"></div>
-        <div class="w-1/2 bg-white"></div>
-      </div>
-      <!-- ================= SECTION 9: CTA PENUTUP & KONTAK ================= -->
-      <section
-        class="bg-primary-container border-b border-navy-border py-16 lg:py-24"
-      >
-        <div class="max-w-6xl mx-auto px-6">
-          <div
-            class="bg-navy-surface border border-secondary gold-prestige-rim rounded-lg p-8 lg:p-12"
-          >
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div class="lg:col-span-7 space-y-4">
-                <span
-                  class="font-label-caps text-label-caps uppercase text-secondary tracking-widest text-xs font-bold block"
-                  >LANGKAH PERTAMA MENUJU SERAGAM KEHORMATAN</span
-                >
-                <h2
-                  class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight"
-                >
+</details>
+</div>
+</section>
+<!-- ================= SECTION 9: CTA PENUTUP & KONTAK ================= -->
+<section class="bg-primary-container border-b border-navy-border py-16 lg:py-24">
+<div class="max-w-6xl mx-auto px-6">
+<div class="bg-navy-surface border border-secondary gold-prestige-rim rounded-lg p-8 lg:p-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 space-y-4">
+
+<h2 class="font-headline-lg lg:font-headline-xl text-headline-lg lg:text-headline-xl text-text-primary font-bold uppercase tracking-tight">
                   Mulai Persiapan Seleksi Sekarang
                 </h2>
-                <p class="font-body-md text-body-md text-text-secondary">
+<p class="font-body-md text-body-md text-text-secondary">
                   Latihan fisik dan akademik lebih awal membuat hasil lebih terukur.
                 </p>
-                <div class="pt-2 flex flex-col sm:flex-row gap-4">
-                  <a
-                    class="h-12 px-8 rounded bg-secondary hover:bg-gold-hover text-navy-deep font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider transition-all duration-150 active:scale-95 shadow-lg"
-                    href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20siap%20mendaftar%20dan%20memulai%20bimbingan%20taruna."
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <span
-                      class="material-symbols-outlined mr-2 text-xl"
-                      style="font-variation-settings: &quot;FILL&quot; 1"
-                      >send</span
-                    >
+<div class="pt-2 flex flex-col sm:flex-row gap-4">
+<a class="btn-sweep btn-sweep-gold h-12 px-8 rounded font-label-caps text-label-caps uppercase flex items-center justify-center font-bold tracking-wider" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20siap%20mendaftar%20dan%20memulai%20bimbingan%20taruna." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-2 text-xl" style='font-variation-settings: "FILL" 1'>send</span>
                     Konsultasi via WhatsApp
                   </a>
-                </div>
-              </div>
-              <!-- Contact & Office Info Box -->
-              <div
-                class="lg:col-span-5 bg-primary-container border border-navy-border rounded p-6 space-y-4"
-              >
-                <div class="border-b border-navy-border pb-3">
-                  <div
-                    class="font-label-caps text-label-caps uppercase text-secondary font-bold text-xs"
-                  >
+</div>
+</div>
+<!-- Contact & Office Info Box -->
+<div class="lg:col-span-5 bg-primary-container border border-navy-border rounded p-6 space-y-4">
+<div class="border-b border-navy-border pb-3">
+<div class="font-label-caps text-label-caps uppercase text-secondary font-bold text-xs">
                     KANTOR &amp; PUSAT PELATIHAN
                   </div>
-                  <div
-                    class="font-headline-sm text-headline-sm text-text-primary font-bold"
-                  >
-                    MARKAS BIMBEL TARUNA
+<div class="font-headline-sm text-headline-sm text-text-primary font-bold">
+                    MARKAS SATRIA TARUNA
                   </div>
-                </div>
-                <!-- Address Box -->
-                <div class="bg-navy-surface border border-navy-border p-3 rounded">
-                  <div class="flex items-center justify-between mb-1">
-                    <span
-                      class="font-label-caps text-label-caps uppercase text-xs text-secondary font-bold"
-                      >KAMPUS UTAMA &amp; ASRAMA</span
-                    >
-                    <span class="text-xs text-text-muted">Alamat Resmi</span>
-                  </div>
-                  <div
-                    class="font-body-sm text-body-sm text-text-primary font-medium"
-                  >
+</div>
+<!-- Address Box -->
+<div class="bg-navy-surface border border-navy-border p-3 rounded">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps uppercase text-xs text-secondary font-bold">KAMPUS UTAMA &amp; ASRAMA</span>
+<span class="text-xs text-text-muted">Alamat Resmi</span>
+</div>
+<div class="font-body-sm text-body-sm text-text-primary font-medium">
                     Jl. Raya Hankam No. 88, Cipayung, Jakarta Timur, DKI Jakarta 13870
                   </div>
-                </div>
-                <!-- Operational Hours Box -->
-                <div class="bg-navy-surface border border-navy-border p-3 rounded">
-                  <div class="flex items-center justify-between mb-1">
-                    <span
-                      class="font-label-caps text-label-caps uppercase text-xs text-secondary font-bold"
-                      >JAM LAYANAN KONSULTASI</span
-                    >
-                    <span class="text-xs text-text-muted"
-                      >Operasional Kantor</span
-                    >
-                  </div>
-                  <div
-                    class="font-body-sm text-body-sm text-text-primary font-medium"
-                  >
+</div>
+<!-- Operational Hours Box -->
+<div class="bg-navy-surface border border-navy-border p-3 rounded">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps uppercase text-xs text-secondary font-bold">JAM LAYANAN KONSULTASI</span>
+<span class="text-xs text-text-muted">Operasional Kantor</span>
+</div>
+<div class="font-body-sm text-body-sm text-text-primary font-medium">
                     Senin - Minggu: 08.00 - 20.00 WIB
                   </div>
-                </div>
-                <div
-                  class="flex items-center justify-between pt-2 text-xs font-body-sm text-text-muted"
-                >
-                  <span class="flex items-center gap-1">
-                    <span
-                      class="material-symbols-outlined text-sm text-secondary"
-                      >location_on</span
-                    >
+</div>
+<div class="flex items-center justify-between pt-2 text-xs font-body-sm text-text-muted">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">location_on</span>
                     Akses Google Maps Tersedia
                   </span>
-                  <span class="flex items-center gap-1">
-                    <span
-                      class="material-symbols-outlined text-sm text-secondary"
-                      >call</span
-                    >
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">call</span>
                     Hotline: 0812-3456-7890
                   </span>
-                </div>
-              </div>
-            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+<a aria-label="Hubungi kami melalui WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-whatsapp-green text-white flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all duration-200" href="https://wa.me/6281234567890?text=Halo%20Admin%20Satria%20Taruna%2C%20saya%20tertarik%20dengan%20program%20bimbingan%20seleksi%20taruna." rel="noopener noreferrer" target="_blank">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg>
+</a>
+<!-- ================= SECTION 10: FOOTER (Shared Component) ================= -->
+<footer class="bg-navy-deep dark:bg-navy-deep text-secondary dark:text-secondary docked full-width bottom border-t border-navy-border dark:border-navy-border">
+<div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 w-full">
+<!-- Brand & Disclaimer -->
+<div class="space-y-2 text-center md:text-left max-w-xl">
+<div class="font-headline-md text-headline-md text-text-primary dark:text-text-primary tracking-wider font-bold">
+            SATRIA TARUNA
           </div>
-        </div>
-      </section>
-    </main>
-    <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
-    <a
-      aria-label="Hubungi kami melalui WhatsApp"
-      class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-whatsapp-green text-white flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all duration-200"
-      href="https://wa.me/6281234567890?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20program%20bimbingan%20seleksi%20taruna."
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
-        <path
-          d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
-        ></path>
-      </svg>
-    </a>
-    <!-- ================= SECTION 10: FOOTER (Shared Component) ================= -->
-    <footer
-      class="bg-navy-deep dark:bg-navy-deep text-secondary dark:text-secondary docked full-width bottom border-t border-navy-border dark:border-navy-border"
-    >
-      <div
-        class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 w-full"
-      >
-        <!-- Brand & Disclaimer -->
-        <div class="space-y-2 text-center md:text-left max-w-xl">
-          <div
-            class="font-headline-md text-headline-md text-text-primary dark:text-text-primary tracking-wider font-bold"
-          >
-            AKADEMI TARUNA INDONESIA
-          </div>
-          <p
-            class="font-body-sm text-body-sm text-text-muted dark:text-text-muted leading-relaxed"
-          >
-            © 2026 Akademi Taruna Indonesia. Lembaga persiapan mandiri, tidak terafiliasi dengan TNI, POLRI, atau kementerian terkait.
+<p class="font-body-sm text-body-sm text-text-muted dark:text-text-muted leading-relaxed">
+            © 2026 Satria Taruna. Lembaga persiapan mandiri, tidak terafiliasi dengan TNI, POLRI, atau kementerian terkait.
           </p>
-        </div>
-        <!-- Links Cluster -->
-        <div
-          class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-center"
-        >
-          <a
-            class="font-label-caps text-label-caps uppercase text-text-muted dark:text-text-muted hover:text-gold-light dark:hover:text-gold-light transition-colors duration-200"
-            href="#"
-            >Kebijakan Privasi</a
-          >
-          <a
-            class="font-label-caps text-label-caps uppercase text-text-muted dark:text-text-muted hover:text-gold-light dark:hover:text-gold-light transition-colors duration-200"
-            href="#"
-            >Syarat &amp; Ketentuan Diklat</a
-          >
-          <a
-            class="font-label-caps text-label-caps uppercase text-text-muted dark:text-text-muted hover:text-gold-light dark:hover:text-gold-light transition-colors duration-200"
-            href="#"
-            >Verifikasi Data Siswa</a
-          >
-          <a
-            class="font-label-caps text-label-caps uppercase text-secondary dark:text-secondary hover:text-gold-light dark:hover:text-gold-light transition-colors duration-200"
-            href="https://wa.me/6281234567890"
-            target="_blank"
-            >Hubungi Tim Pembina</a
-          >
-        </div>
-      </div>
-    </footer>
-  </body>
+</div>
+<!-- Links Cluster -->
+<div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-center">
+<a class="font-label-caps text-label-caps uppercase text-text-muted dark:text-text-muted hover:text-gold-light dark:hover:text-gold-light transition-colors duration-200" href="#">Kebijakan Privasi</a>
+<a class="font-label-caps text-label-caps uppercase text-text-muted dark:text-text-muted hover:text-gold-light dark:hover:text-gold-light transition-colors duration-200" href="#">Syarat &amp; Ketentuan Diklat</a>
+<a class="font-label-caps text-label-caps uppercase text-text-muted dark:text-text-muted hover:text-gold-light dark:hover:text-gold-light transition-colors duration-200" href="#">Verifikasi Data Siswa</a>
+<a class="font-label-caps text-label-caps uppercase text-secondary dark:text-secondary hover:text-gold-light dark:hover:text-gold-light transition-colors duration-200" href="https://wa.me/6281234567890" target="_blank">Hubungi Tim Pembina</a>
+</div>
+</div>
+</footer>
+</body>
 </html>
