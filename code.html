@@ -313,11 +313,29 @@
         }
       }
 
+      /* ================= DYNAMIC NAVBAR SCROLL TRANSPARENCY ================= */
+      header {
+        transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, backdrop-filter 0.25s ease, -webkit-backdrop-filter 0.25s ease;
+      }
+      header.navbar-transparent {
+        background-color: transparent !important;
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
+      header.navbar-scrolled {
+        background-color: rgba(5, 11, 24, 0.92) !important;
+        border-bottom-color: rgba(30, 58, 109, 0.8) !important;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
     </style>
 </head>
 <body class="bg-navy-deep text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-secondary selection:text-navy-deep">
 <!-- ================= SECTION 1: TOP APP BAR (Shared Component) ================= -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-primary-container/95 backdrop-blur-md border-b border-navy-border/80 shadow-lg">
+<header class="fixed top-0 left-0 right-0 z-50 navbar-transparent border-b border-transparent">
 <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between w-full">
 <!-- Brand Logo Anchor -->
 <a class="flex items-center gap-3 active:scale-95 transition-transform duration-150" href="#">
@@ -345,9 +363,9 @@
 </div>
 </div>
 </header>
-<main class="flex-grow pt-20">
+<main class="flex-grow">
 <!-- ================= SECTION 2: HERO SECTION ================= -->
-<section class="relative min-h-[640px] lg:h-[720px] flex items-center overflow-hidden border-b border-navy-border">
+<section class="relative min-h-[640px] lg:h-[720px] flex items-center overflow-hidden border-b border-navy-border pt-20">
 <!-- Background Image with Double Gradients -->
 <div class="absolute inset-0 z-0">
 <!-- GANTI FOTO INI: Foto barisan taruna/calon taruna berlatih fisik di lintasan atletik stadion militer saat fajar -->
@@ -1235,5 +1253,23 @@
 </div>
 </div>
 </footer>
+  <!-- Dynamic Navbar Scroll Controller -->
+  <script>
+    (function () {
+      const header = document.querySelector('header');
+      if (!header) return;
+      function updateNavOnScroll() {
+        if (window.scrollY > 20) {
+          header.classList.remove('navbar-transparent');
+          header.classList.add('navbar-scrolled');
+        } else {
+          header.classList.add('navbar-transparent');
+          header.classList.remove('navbar-scrolled');
+        }
+      }
+      window.addEventListener('scroll', updateNavOnScroll, { passive: true });
+      updateNavOnScroll();
+    })();
+  </script>
 </body>
 </html>
